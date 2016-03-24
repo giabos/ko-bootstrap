@@ -133,8 +133,8 @@
         this.opened = false;
         this.modal = typeof element === 'object' ? element : document.querySelector(element);
         this.options = {};
-        this.options.backdrop = options.backdrop === 'false' ? false : true;
-        this.options.keyboard = options.keyboard === 'false' ? false : true;
+        this.options.backdrop = options.backdrop || 'static';  //  === 'false' ? false : true;
+        this.options.keyboard = options.keyboard === 'true' ? true : false;
         this.options.content = options.content;
         this.options.obs = options.observable;
         this.duration = options.duration || 400; // the default modal fade duration option
